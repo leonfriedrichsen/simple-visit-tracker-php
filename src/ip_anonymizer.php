@@ -83,4 +83,3 @@ class IpAnonymizer {
         return inet_ntop(inet_pton($address) & inet_pton($this->ipv6NetMask));
     }
 }
-?>

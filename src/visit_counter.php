@@ -28,4 +28,3 @@ class VisitCounter {
         mysqli_close($link);
     }
 }
-?>
