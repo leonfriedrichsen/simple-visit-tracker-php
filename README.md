@@ -2,6 +2,10 @@
 
 This is a library for PHP to track visits on your website. My goal was to develop a visit tracker where I know exactly what data is stored and where it is stored. Also, no personal data is stored, and no cookies are used, which means you don't need a privacy policy, cookie banner and other consent that is usually required for other analytics tools in the EU.
 
+## Requirements
+- SQL database to store your visits
+- web server to call your PHP code
+
 ## Installation
 
 #### 1. Download the library
