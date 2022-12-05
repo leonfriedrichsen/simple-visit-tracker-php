@@ -64,6 +64,8 @@ VisitCounter::countVisit('example.php'); # <-- the parameter is the name of the 
 
 ```
 
+#### 5. Display your data
+Now that the visits are stored in your database, you can build your own API and display the data in an app, for example.
 
 ## Example
 ```php
