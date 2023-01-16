@@ -67,6 +67,55 @@ VisitCounter::countVisit('example.php'); # <-- the parameter is the name of the 
 #### 5. Display your data
 Now that the visits are stored in your database, you can build your own API and display the data in an app, for example.
 
+This is what a very simple API could look like that returns the daily visits to a certain page as JSON...
+
+
+```php
+<?php  
+require("config.php");
+
+$sql = "SELECT page, date, visits FROM totalVisits";
+
+if ($result = mysqli_query($link, $sql)) {
+  
+  $resultArray = array();
+  $tempArray = array();
+
+  while($row = $result->fetch_object()) {
+
+    $tempArray = $row;
+    array_push($resultArray, $tempArray);
+  }
+
+  echo json_encode($resultArray);
+}
+
+mysqli_close($link);
+?>
+```
+
+... and this is the associated output.
+
+```json
+[
+  {
+    "page": "index.php",
+    "date": "2021-12-30",
+    "visits": "164"
+  },
+  {
+    "page": "kit.php",
+    "date": "2021-12-30",
+    "visits": "98"
+  },
+  {
+    "page": "portfolio.php",
+    "date": "2021-12-30",
+    "visits": "96"
+  }
+]
+```
+
 ## Example
 ```php
 <?php
